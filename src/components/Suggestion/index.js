@@ -1,19 +1,15 @@
 import React from "react";
 
 const Suggestion = (props) => {
-  return <p>Hej</p>;
+  const [data, setFetch] = useState[null];
+
+  useEffect(() => {
+    fetch("https://www.boredapi.com/api/activity")
+      .then((response) => response.json())
+      .then((data) => setFetch(data));
+  }, []);
+
+  return <h1>{data.activity}</h1>;
 };
-
-// Set which props this component takes
-// Button.propTypes = {
-//   buttonText: PropTypes.string,
-//   bg: PropTypes.string,
-// };
-
-// Set default props in case no props were passed to the component
-// Button.defaultProps = {
-//   buttonText: "I'm booored",
-//   bg: "",
-// };
 
 export default Suggestion;

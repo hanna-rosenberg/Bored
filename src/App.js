@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Button from "./components/Button.js";
+import Suggestion from "./components/Suggestion";
 
 function App() {
   return (
@@ -11,9 +11,5 @@ function App() {
     </div>
   );
 }
-
-fetch("https://www.boredapi.com/api/activity")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
 
 export default App;
