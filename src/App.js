@@ -12,4 +12,8 @@ function App() {
   );
 }
 
+fetch("https://www.boredapi.com/api/activity")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
 export default App;
