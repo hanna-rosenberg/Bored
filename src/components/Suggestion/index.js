@@ -24,13 +24,29 @@ const Suggestion = () => {
     setParticipants(data.participants);
   };
 
+  const getGroupSuggestion = async () => {
+    let randomInt = Math.floor(Math.random() * 8) + 2;
+    if (randomInt == 6 || randomInt == 7 || randomInt == 9) {
+      randomInt = 5;
+    }
+    console.log(randomInt);
+    const response = await fetch(
+      "https://www.boredapi.com/api/activity?participants=" + randomInt
+    );
+    const data = await response.json();
+    setActivity(data.activity);
+    setType(data.type);
+    setParticipants(data.participants);
+    console.log(data);
+  };
   return (
     <div>
+      <Button buttonText="Random" handleClick={() => getSuggestion()} />
+      <Button buttonText="Single" handleClick={() => getSingleSuggestion()} />
+      <Button buttonText="Group" handleClick={() => getGroupSuggestion()} />
       <h1>{activity}</h1>
       <p>Type: {type}</p>
       <p>Participants: {participants}</p>
-      <Button buttonText="Random" handleClick={() => getSuggestion()} />
-      <Button buttonText="Single" handleClick={() => getSingleSuggestion()} />
     </div>
   );
 };
