@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import Button from "../Button";
-import React, { useState, useEffect } from "react";
 
 const Suggestion = () => {
   const [activity, setActivity] = useState();
@@ -51,12 +51,15 @@ const Suggestion = () => {
     var participantsText = document.querySelector(".participants");
     participantsText.innerHTML = "Participants: " + participants;
   };
+
+  const google = `https://letmegooglethat.com/?q=${activity}`;
+
   return (
     <div>
       <Button buttonText="Random" handleClick={() => getSuggestion()} />
       <Button buttonText="Single" handleClick={() => getSingleSuggestion()} />
       <Button buttonText="Group" handleClick={() => getGroupSuggestion()} />
-      <a href="https://letmegooglethat.com/?q=paper+crane">
+      <a href={google}>
         <h1>{activity}</h1>
       </a>
       <p class="type"></p>
