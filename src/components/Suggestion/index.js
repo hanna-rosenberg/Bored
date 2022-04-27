@@ -3,9 +3,9 @@ import Button from "../Button";
 import "./suggestion.css";
 
 const Suggestion = () => {
-  const [activity, setActivity] = useState();
-  const [type, setType] = useState();
-  const [participants, setParticipants] = useState();
+  const [activity, setActivity] = useState(null);
+  const [type, setType] = useState("");
+  const [participants, setParticipants] = useState(0);
 
   const getSuggestion = async () => {
     const response = await fetch("https://www.boredapi.com/api/activity");
@@ -13,12 +13,12 @@ const Suggestion = () => {
     setActivity(data.activity);
     setType(data.type);
     setParticipants(data.participants);
-    var typeText = document.querySelector(".type");
-    typeText.innerHTML = "Type: " + type;
-    var participantsText = document.querySelector(".participants");
-    participantsText.innerHTML = "Participants: " + participants;
-    var showCard = document.querySelector(".card");
-    showCard.classList.add("show");
+    // var typeText = document.querySelector(".type");
+    // typeText.innerHTML = "Type: " + type;
+    // var participantsText = document.querySelector(".participants");
+    // participantsText.innerHTML = "Participants: " + participants;
+    // var showCard = document.querySelector(".card");
+    // showCard.classList.add("show");
   };
 
   const getSingleSuggestion = async () => {
@@ -29,12 +29,12 @@ const Suggestion = () => {
     setActivity(data.activity);
     setType(data.type);
     setParticipants(data.participants);
-    var typeText = document.querySelector(".type");
-    typeText.innerHTML = "Type: " + type;
-    var participantsText = document.querySelector(".participants");
-    participantsText.innerHTML = "Participants: " + participants;
-    var showCard = document.querySelector(".card");
-    showCard.classList.add("show");
+    // var typeText = document.querySelector(".type");
+    // typeText.innerHTML = "Type: " + type;
+    // var participantsText = document.querySelector(".participants");
+    // participantsText.innerHTML = "Participants: " + participants;
+    // var showCard = document.querySelector(".card");
+    // showCard.classList.add("show");
   };
 
   const getGroupSuggestion = async () => {
@@ -51,12 +51,12 @@ const Suggestion = () => {
     setType(data.type);
     setParticipants(data.participants);
     console.log(data);
-    var typeText = document.querySelector(".type");
-    typeText.innerHTML = "Type: " + type;
-    var participantsText = document.querySelector(".participants");
-    participantsText.innerHTML = "Participants: " + participants;
-    var showCard = document.querySelector(".card");
-    showCard.classList.add("show");
+    // var typeText = document.querySelector(".type");
+    // typeText.innerHTML = "Type: " + type;
+    // var participantsText = document.querySelector(".participants");
+    // participantsText.innerHTML = "Participants: " + participants;
+    // var showCard = document.querySelector(".card");
+    // showCard.classList.add("show");
   };
 
   const google = `https://letmegooglethat.com/?q=${activity}`;
@@ -69,13 +69,15 @@ const Suggestion = () => {
         <Button buttonText="Group" handleClick={() => getGroupSuggestion()} />
       </div>
       <div className="cardContainer">
-        <div className="card">
-          <a href={google}>
-            <h1>{activity}</h1>
-          </a>
-          <p class="type"></p>
-          <p class="participants"></p>
-        </div>
+        {activity && (
+          <div className="card">
+            <a href={google}>
+              <h1>{activity}</h1>
+            </a>
+            <p class="type">{type}</p>
+            <p class="participants">{participants}</p>
+          </div>
+        )}
       </div>
     </div>
   );

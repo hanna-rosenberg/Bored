@@ -35,7 +35,7 @@ a:hover {
   color: rgb(176, 105, 116);
   padding-bottom: 30px;
   border-radius: 10px;
-  display: none;
+  /* display: none; */
 }
 
 .show {
