@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../Button";
+import "./suggestion.css";
 
 const Suggestion = () => {
   const [activity, setActivity] = useState();
@@ -56,14 +57,20 @@ const Suggestion = () => {
 
   return (
     <div>
-      <Button buttonText="Random" handleClick={() => getSuggestion()} />
-      <Button buttonText="Single" handleClick={() => getSingleSuggestion()} />
-      <Button buttonText="Group" handleClick={() => getGroupSuggestion()} />
-      <a href={google}>
-        <h1>{activity}</h1>
-      </a>
-      <p class="type"></p>
-      <p class="participants"></p>
+      <div className="buttonContainer">
+        <Button buttonText="Random" handleClick={() => getSuggestion()} />
+        <Button buttonText="Single" handleClick={() => getSingleSuggestion()} />
+        <Button buttonText="Group" handleClick={() => getGroupSuggestion()} />
+      </div>
+      <div className="cardContainer">
+        <div className="card">
+          <a href={google}>
+            <h1>{activity}</h1>
+          </a>
+          <p class="type"></p>
+          <p class="participants"></p>
+        </div>
+      </div>
     </div>
   );
 };

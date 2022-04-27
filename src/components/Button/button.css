@@ -1,9 +1,16 @@
 Button {
-  border-radius: 20px;
+  border-radius: 50px;
   width: 100px;
-  height: 40px;
+  height: 100px;
   background-color: rgb(248, 233, 235);
   cursor: pointer;
   border: none;
-  color: lightpink;
+  color: rgb(176, 105, 116);
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+Button:hover {
+  background-color: lightblue;
+  color: white;
 }
