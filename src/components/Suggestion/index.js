@@ -67,8 +67,13 @@ const Suggestion = () => {
             <a href={google}>
               <h1>{activity}</h1>
             </a>
+<<<<<<< HEAD
             <p className="type">{type}</p>
             <p className="participants">{participants}</p>
+=======
+            <p class="type">Type: {type}</p>
+            <p class="participants">Participants: {participants}</p>
+>>>>>>> cda8f2001e4fb6b718d1cccad0fe7df54a0e6ac4
           </div>
         )}
       </div>
