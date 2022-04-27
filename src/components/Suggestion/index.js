@@ -27,7 +27,7 @@ const Suggestion = () => {
   const getGroupSuggestion = async () => {
     let randomInt = Math.floor(Math.random() * 8) + 2;
     if (randomInt == 6 || randomInt == 7 || randomInt == 9) {
-      randomInt = 5;
+      randomInt = Math.floor(Math.random() * 3) + 2;
     }
     console.log(randomInt);
     const response = await fetch(
