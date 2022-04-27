@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Poiret+One&family=Square+Peg&family=Urbanist:wght@300&display=swap");
+
 Button {
   border-radius: 50px;
   width: 100px;
@@ -7,7 +9,7 @@ Button {
   border: none;
   color: rgb(176, 105, 116);
   font-size: 20px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Poiret One;
 }
 
 Button:hover {

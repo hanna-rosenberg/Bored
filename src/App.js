@@ -4,7 +4,7 @@ import Suggestion from "./components/Suggestion";
 function App() {
   return (
     <div className="App">
-      <h1>Bored?</h1>
+      <h1>Booored?</h1>
       <h2>Press the button to get a suggestion on what to do</h2>
 
       <Suggestion></Suggestion>
