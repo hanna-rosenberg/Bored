@@ -12,6 +12,10 @@ const Suggestion = () => {
     setActivity(data.activity);
     setType(data.type);
     setParticipants(data.participants);
+    var typeText = document.querySelector(".type");
+    typeText.innerHTML = "Type: " + type;
+    var participantsText = document.querySelector(".participants");
+    participantsText.innerHTML = "Participants: " + participants;
   };
 
   const getSingleSuggestion = async () => {
@@ -22,6 +26,10 @@ const Suggestion = () => {
     setActivity(data.activity);
     setType(data.type);
     setParticipants(data.participants);
+    var typeText = document.querySelector(".type");
+    typeText.innerHTML = "Type: " + type;
+    var participantsText = document.querySelector(".participants");
+    participantsText.innerHTML = "Participants: " + participants;
   };
 
   const getGroupSuggestion = async () => {
@@ -38,15 +46,21 @@ const Suggestion = () => {
     setType(data.type);
     setParticipants(data.participants);
     console.log(data);
+    var typeText = document.querySelector(".type");
+    typeText.innerHTML = "Type: " + type;
+    var participantsText = document.querySelector(".participants");
+    participantsText.innerHTML = "Participants: " + participants;
   };
   return (
     <div>
       <Button buttonText="Random" handleClick={() => getSuggestion()} />
       <Button buttonText="Single" handleClick={() => getSingleSuggestion()} />
       <Button buttonText="Group" handleClick={() => getGroupSuggestion()} />
-      <h1>{activity}</h1>
-      <p>Type: {type}</p>
-      <p>Participants: {participants}</p>
+      <a href="https://letmegooglethat.com/?q=paper+crane">
+        <h1>{activity}</h1>
+      </a>
+      <p class="type"></p>
+      <p class="participants"></p>
     </div>
   );
 };
