@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Poiret+One&family=Square+Peg&family=Urbanist:wght@300&display=swap");
 .App {
   text-align: center;
 }
@@ -5,6 +6,25 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+h1 {
+  font-family: Square Peg;
+  font-size: 100px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-weight: 100;
+}
+
+.card h1 {
+  font-family: Poiret One;
+  font-size: 50px;
+}
+
+h2 {
+  font-family: Poiret One;
+  font-size: 40px;
+  font-weight: 100;
 }
 
 @media (prefers-reduced-motion: no-preference) {
