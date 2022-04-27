@@ -17,6 +17,8 @@ const Suggestion = () => {
     typeText.innerHTML = "Type: " + type;
     var participantsText = document.querySelector(".participants");
     participantsText.innerHTML = "Participants: " + participants;
+    var showCard = document.querySelector(".card");
+    showCard.classList.add("show");
   };
 
   const getSingleSuggestion = async () => {
@@ -31,6 +33,8 @@ const Suggestion = () => {
     typeText.innerHTML = "Type: " + type;
     var participantsText = document.querySelector(".participants");
     participantsText.innerHTML = "Participants: " + participants;
+    var showCard = document.querySelector(".card");
+    showCard.classList.add("show");
   };
 
   const getGroupSuggestion = async () => {
@@ -51,6 +55,8 @@ const Suggestion = () => {
     typeText.innerHTML = "Type: " + type;
     var participantsText = document.querySelector(".participants");
     participantsText.innerHTML = "Participants: " + participants;
+    var showCard = document.querySelector(".card");
+    showCard.classList.add("show");
   };
 
   const google = `https://letmegooglethat.com/?q=${activity}`;
