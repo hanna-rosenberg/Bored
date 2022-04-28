@@ -32,7 +32,7 @@ const Suggestion = () => {
 
   useEffect(() => {
     let randomInt = Math.floor(Math.random() * 8) + 2;
-    if (randomInt == 6 || randomInt == 7 || randomInt == 9) {
+    if (randomInt === 6 || randomInt === 7 || randomInt === 9) {
       randomInt = Math.floor(Math.random() * 3) + 2;
     }
     fetch("https://www.boredapi.com/api/activity?participants=" + randomInt)
@@ -71,6 +71,7 @@ const Suggestion = () => {
               src="https://media.giphy.com/media/0k5oV0ccwC3pB6QXOL/giphy.gif"
               width="700"
               height="500"
+              alt="cloud"
             ></img>
             <div className="centered">
               <a href={google}>
