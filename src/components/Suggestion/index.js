@@ -3,12 +3,12 @@ import Button from "../Button";
 import "./suggestion.css";
 
 const Suggestion = () => {
-  const [activity, setActivity] = useState(null);
+  const [activity, setActivity] = useState("");
   const [type, setType] = useState("");
   const [participants, setParticipants] = useState(0);
-  const [buttonRandom, setButtonRandom] = useState(null);
-  const [buttonSingle, setButtonSingle] = useState(null);
-  const [buttonGroup, setButtonGroup] = useState(null);
+  const [buttonRandom, setButtonRandom] = useState(0);
+  const [buttonSingle, setButtonSingle] = useState(0);
+  const [buttonGroup, setButtonGroup] = useState(0);
 
   useEffect(() => {
     fetch("https://www.boredapi.com/api/activity")
@@ -44,8 +44,7 @@ const Suggestion = () => {
       });
   }, [buttonGroup]);
 
-  let randomInt = Math.floor(Math.random() * 8) + 2;
-
+  let randomNumber = Math.floor(Math.random() * 100);
   const google = `https://letmegooglethat.com/?q=${activity}`;
 
   return (
@@ -53,17 +52,18 @@ const Suggestion = () => {
       <div className="buttonContainer">
         <Button
           buttonText="Random"
-          handleClick={() => setButtonRandom({ randomInt })}
+          handleClick={() => setButtonRandom({ randomNumber })}
         />
         <Button
           buttonText="Single"
-          handleClick={() => setButtonSingle({ randomInt })}
+          handleClick={() => setButtonSingle({ randomNumber })}
         />
         <Button
           buttonText="Group"
-          handleClick={() => setButtonGroup({ randomInt })}
+          handleClick={() => setButtonGroup({ randomNumber })}
         />
       </div>
+
       <div className="cardContainer">
         {activity && (
           <div className="card">
