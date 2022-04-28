@@ -67,11 +67,18 @@ const Suggestion = () => {
       <div className="cardContainer">
         {activity && (
           <div className="card">
-            <a href={google}>
-              <h1>{activity}</h1>
-            </a>
-            <p className="type">{type}</p>
-            <p className="participants">{participants}</p>
+            <img
+              src="https://media.giphy.com/media/0k5oV0ccwC3pB6QXOL/giphy.gif"
+              width="700"
+              height="500"
+            ></img>
+            <div className="centered">
+              <a href={google}>
+                <h1>{activity}</h1>
+              </a>
+              <p className="type">{type}</p>
+              <p className="participants">{participants}</p>
+            </div>
           </div>
         )}
       </div>
