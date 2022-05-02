@@ -9,6 +9,7 @@ const Suggestion = () => {
   const [buttonRandom, setButtonRandom] = useState(0);
   const [buttonSingle, setButtonSingle] = useState(0);
   const [buttonGroup, setButtonGroup] = useState(0);
+  const [hasClicked, setHasClicked] = useState(false);
 
   useEffect(() => {
     fetch("https://www.boredapi.com/api/activity")
@@ -52,20 +53,29 @@ const Suggestion = () => {
       <div className="buttonContainer">
         <Button
           buttonText="Random"
-          handleClick={() => setButtonRandom({ randomNumber })}
+          handleClick={() => {
+            setButtonRandom({ randomNumber });
+            setHasClicked(true);
+          }}
         />
         <Button
           buttonText="Single"
-          handleClick={() => setButtonSingle({ randomNumber })}
+          handleClick={() => {
+            setButtonSingle({ randomNumber });
+            setHasClicked(true);
+          }}
         />
         <Button
           buttonText="Group"
-          handleClick={() => setButtonGroup({ randomNumber })}
+          handleClick={() => {
+            setButtonGroup({ randomNumber });
+            setHasClicked(true);
+          }}
         />
       </div>
 
       <div className="cardContainer">
-        {activity && (
+        {activity && hasClicked && (
           <div className="card">
             <img
               src="https://media.giphy.com/media/0k5oV0ccwC3pB6QXOL/giphy.gif"
