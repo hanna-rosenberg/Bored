@@ -26,7 +26,6 @@ a:hover {
 .card {
   /* align-items: center; */
   color: rgb(176, 105, 116);
-  padding: 30px;
   position: relative;
   text-align: center;
 }

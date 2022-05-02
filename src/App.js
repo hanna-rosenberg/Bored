@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <Header headerText="Bored?"></Header>
-      <h2>Press the button to get a suggestion on what to do</h2>
+      <h2>Press one of the buttons to get a suggestion on what to do</h2>
       <Suggestion></Suggestion>
     </div>
   );

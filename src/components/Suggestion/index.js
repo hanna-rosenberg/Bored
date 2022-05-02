@@ -77,8 +77,8 @@ const Suggestion = () => {
               <a href={google}>
                 <h1>{activity}</h1>
               </a>
-              <p className="type">{type}</p>
-              <p className="participants">{participants}</p>
+              <p className="type">Type: {type}</p>
+              <p className="participants">Participants: {participants}</p>
             </div>
           </div>
         )}
